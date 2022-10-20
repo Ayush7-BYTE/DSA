@@ -21,7 +21,7 @@ int binarySearch(int arr[], int l, int r, int x)
 
 int main(void)
 {
-	int arr[] = { 2, 3, 4, 10, 40 };
+	int arr[] = { 2, 3, 4, 10, 40,10,20,30,40};
 	int x = 10;
 	int n = sizeof(arr) / sizeof(arr[0]);
 	int result = binarySearch(arr, 0, n - 1, x);

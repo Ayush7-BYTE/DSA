@@ -15,7 +15,7 @@ class LinearSearch {
  
     public static void main(String[] args)
     {
-        int[] arr = { 3, 4, 1, 7, 5 };
+        int[] arr = { 3, 4, 1, 7, 5,6,9};
         int n = arr.length;
          
         int x = 4;
