@@ -1,0 +1,45 @@
+class Solution {
+private:
+    void insertAtPos(ListNode* &ltemp, ListNode* &stemp){
+        ListNode* NodeToInsert=ltemp;
+        ltemp=ltemp->next;
+        NodeToInsert->next=stemp->next;
+        stemp->next=NodeToInsert;
+        stemp=stemp->next;
+    }
+    ListNode* solve(ListNode* &small, ListNode* &large){
+        ListNode* stemp=small;
+        ListNode* ltemp=large;
+        ListNode* sprev=stemp;
+        if(stemp->next==NULL){
+            stemp->next=ltemp;
+            return small;
+        }
+        while(stemp!=NULL && ltemp!=NULL){
+            if(ltemp->val >= stemp->val && stemp->next==NULL)
+                insertAtPos(ltemp, stemp);
+            else if(ltemp->val >= stemp->val && stemp->next->val>=ltemp->val)
+                insertAtPos(ltemp, stemp);
+            else{
+                sprev=stemp;
+                stemp=stemp->next;
+            }
+        }
+        if(ltemp!=NULL){
+            sprev->next=ltemp;
+        }
+            
+        return small;
+    }
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(list1==NULL)
+            return list2;
+        if(list2==NULL)
+            return list1;
+        if(list1->val >= list2->val)
+            return solve(list2, list1);
+        else
+            return solve(list1, list2);
+    }
+};
