@@ -2,8 +2,7 @@
 class BinarySearch {
 	// Returns index of x if it is present in arr[l..
 	// r], else return -1
-	int binarySearch(int arr[], int l, int r, int x)
-	{
+	int binarySearch(int arr[], int l, int r, int x) {
 		if (r >= l) {
 			int mid = l + (r - l) / 2;
 
@@ -28,8 +27,7 @@ class BinarySearch {
 	}
 
 	// Driver method to test above
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		BinarySearch ob = new BinarySearch();
 		int arr[] = { 2, 3, 4, 10, 40 };
 		int n = arr.length;
@@ -39,7 +37,7 @@ class BinarySearch {
 			System.out.println("Element not present");
 		else
 			System.out.println("Element found at index "
-							+ result);
+					+ result);
 	}
 }
 /* This code is contributed by Rajat Mishra */
